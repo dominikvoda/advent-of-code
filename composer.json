@@ -1,0 +1,20 @@
+{
+  "name": "dominikvoda/advent-of-code-2017",
+  "description": "",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Dominik Voda",
+      "email": "d.voda94@gmail.com"
+    }
+  ],
+  "require": {
+    "symfony/console": "^4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "AOC2017\\": "src/AOC2017"
+    }
+  }
+}
