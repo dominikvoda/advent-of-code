@@ -27,15 +27,6 @@ abstract class DefaultDay
     }
 
     /**
-     * @return string
-     * @throws Exception
-     */
-    protected function getDirectInput(): string
-    {
-        throw new Exception('You should override this method for direct input');
-    }
-
-    /**
      * @param array|string|null $input
      *
      * @return string
@@ -49,21 +40,28 @@ abstract class DefaultDay
      * @return string
      * @throws Exception
      */
-    final public function getFirstResult(string $dayNumber): string
+    protected function getDirectInput(): string
     {
-        $input = $this->loadInput($dayNumber);
+        throw new Exception('You should override this method for direct input');
+    }
 
+    /**
+     * @param $input
+     *
+     * @return string
+     */
+    final public function getFirstResult($input): string
+    {
         return $this->resolveFirstPuzzle($input);
     }
 
     /**
+     * @param $input
+     *
      * @return string
-     * @throws Exception
      */
-    final public function getSecondResult(int $dayNumber): string
+    final public function getSecondResult($input): string
     {
-        $input = $this->loadInput($dayNumber);
-
         return $this->resolveSecondPuzzle($input);
     }
 
@@ -73,7 +71,7 @@ abstract class DefaultDay
      * @return  array|string|null $input
      * @throws Exception
      */
-    private function loadInput(int $dayNumber)
+    final public function loadInput(int $dayNumber)
     {
         if ($this->getInputType() === self::INPUT_NONE) {
             return null;

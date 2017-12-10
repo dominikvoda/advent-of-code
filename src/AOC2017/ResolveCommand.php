@@ -9,6 +9,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Style\SymfonyStyle;
 
 class ResolveCommand extends Command
 {
@@ -37,23 +38,36 @@ class ResolveCommand extends Command
         $dayClass = sprintf('AOC2017\Days\Day%s', $dayNumber);
         $first = $input->getOption(self::FIRST_OPTION);
         $second = $input->getOption(self::SECOND_OPTION);
+        $io = new SymfonyStyle($input, $output);
 
         if (class_exists($dayClass)) {
             /** @var DefaultDay $day */
             $day = new $dayClass();
+            $input = $day->loadInput($dayNumber);
+            $io->success('Input loaded');
 
             if (!$first && !$second) {
                 $first = $second = true;
             }
 
             if ($first) {
-                $output->writeln(sprintf('Result 1: %s', $day->getFirstResult($dayNumber)));
+                $io->title('First puzzle is resolving...');
+                $start = microtime(true);
+                $firstResult = $day->getFirstResult($input);
+                $seconds = microtime(true) - $start;
+                $io->success(sprintf('Result 1: %s', $firstResult));
+                $io->comment(sprintf('Execution time: %f sec', $seconds));
             }
             if ($second) {
-                $output->writeln(sprintf('Result 2: %s', $day->getSecondResult($dayNumber)));
+                $io->title('Second puzzle is resolving...');
+                $start = microtime(true);
+                $secondResult = $day->getSecondResult($input);
+                $seconds = microtime(true) - $start;
+                $io->success(sprintf('Result 2: %s', $secondResult));
+                $io->comment(sprintf('Execution time: %f sec', $seconds));
             }
         } else {
-            $output->writeln(sprintf('Class %s not found', $dayClass));
+            $io->error(sprintf('Class %s not found', $dayClass));
         }
     }
 }

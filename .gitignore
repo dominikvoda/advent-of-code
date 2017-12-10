@@ -2,3 +2,4 @@
 /composer.lock
 /src/AOC2017/Days/
 !/src/AOC2017/Days/DefaultDay.php
+/src/AOC2017/Classes/
