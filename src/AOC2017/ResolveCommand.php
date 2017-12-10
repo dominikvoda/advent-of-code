@@ -3,6 +3,7 @@
 namespace AOC2017;
 
 use AOC2017\Days\DefaultDay;
+use Exception;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -23,6 +24,7 @@ class ResolveCommand extends Command
      * @param OutputInterface $output
      *
      * @return int|null|void
+     * @throws Exception
      */
     public function execute(InputInterface $input, OutputInterface $output)
     {
