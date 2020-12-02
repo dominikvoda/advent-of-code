@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parent selector</title>
+</head>
+<body>
+<canvas height="1000px" width="2000px" id="map"></canvas>
+<script>
+    var canva = document.getElementById('map')
+    var ctx = canva.getContext('2d')
+
+    function drawLine(from, to, color) {
+        if(to === undefined){
+            return;
+        }
+
+        let scale = 1
+
+        ctx.beginPath()
+        ctx.moveTo(from.x / scale, from.y / scale)
+        ctx.lineTo(to.x / scale, to.y / scale)
+        ctx.strokeStyle = color
+        ctx.stroke()
+        ctx.closePath()
+    }
+
+    var request = new XMLHttpRequest()
+    request.open('GET', 'lines.json', true)
+
+    request.onload = function () {
+        var data = JSON.parse(request.responseText)
+
+        var counter = 0,
+            inter = setInterval(function () {
+
+                drawLine(data.A[counter], data.A[counter + 1], 'red');
+                drawLine(data.B[counter], data.B[counter + 1], 'blue');
+
+                counter++
+
+                if (counter >= data.B.length) {
+                    clearInterval(inter)
+                }
+
+            }, 10)
+    }
+
+    request.send()
+</script>
+</body>
+</html>

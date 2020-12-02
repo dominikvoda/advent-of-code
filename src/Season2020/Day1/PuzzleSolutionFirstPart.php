@@ -2,8 +2,8 @@
 
 namespace AdventOfCode\Season2020\Day1;
 
-use AdventOfCode\LinesInput;
-use AdventOfCode\PuzzleSolution;
+use AdventOfCode\Season2020\LinesInput;
+use AdventOfCode\Season2020\PuzzleSolution;
 
 final class PuzzleSolutionFirstPart implements PuzzleSolution
 {
