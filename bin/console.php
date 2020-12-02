@@ -1,6 +1,6 @@
-<?php
+<?php declare(strict_types = 1);
 
-use AOC2017\ResolveCommand;
+use AdventOfCode\ResolveCommand;
 use Symfony\Component\Console\Application;
 
 require_once __DIR__ . '/../vendor/autoload.php';

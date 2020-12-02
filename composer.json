@@ -10,11 +10,12 @@
     }
   ],
   "require": {
-    "symfony/console": "^4.0"
+    "symfony/console": "^4.0",
+    "nette/utils": "^3.2"
   },
   "autoload": {
     "psr-4": {
-      "AOC2017\\": "src/AOC2017"
+      "AdventOfCode\\": "src/"
     }
   }
 }
