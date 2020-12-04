@@ -3,7 +3,6 @@
 namespace AdventOfCode\Season2020;
 
 use function str_split;
-use function var_dump;
 
 final class GridInput
 {

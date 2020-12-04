@@ -9,6 +9,7 @@ use function assert;
 use function count;
 use function explode;
 use function is_array;
+use function rtrim;
 use const PHP_EOL;
 
 final class LinesInput
@@ -21,13 +22,10 @@ final class LinesInput
     private $size;
 
 
-    public function __construct(string $inputFile)
+    public function __construct(string $inputFile, string $delimiter = PHP_EOL)
     {
-        $lines = explode(PHP_EOL, FileSystem::read($inputFile));
+        $lines = explode($delimiter, rtrim(FileSystem::read($inputFile)));
         assert(is_array($lines));
-
-        // remove empty line at the end of input
-        array_pop($lines);
 
         $this->lines = $lines;
         $this->size = count($this->lines);
