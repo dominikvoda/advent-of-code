@@ -1,0 +1,14 @@
+<?php declare(strict_types = 1);
+
+namespace AdventOfCode\Season{{season}}\Day{{dayNumber}};
+
+use AdventOfCode\PuzzleSolution;
+use LogicException;
+
+final class PuzzleSolution{{part}}Part implements PuzzleSolution
+{
+    public function getResult(): string
+    {
+		throw new LogicException('Not implemented');
+    }
+}
