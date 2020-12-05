@@ -2,6 +2,7 @@
 
 namespace AdventOfCode\Season2020;
 
+use AdventOfCode\LinesInput;
 use function str_split;
 
 final class GridInput

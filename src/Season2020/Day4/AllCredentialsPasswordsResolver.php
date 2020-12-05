@@ -2,7 +2,7 @@
 
 namespace AdventOfCode\Season2020\Day4;
 
-use AdventOfCode\Season2020\LinesInput;
+use AdventOfCode\LinesInput;
 use function array_filter;
 use const PHP_EOL;
 

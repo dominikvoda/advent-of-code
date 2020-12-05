@@ -2,8 +2,8 @@
 
 namespace AdventOfCode\Season2020\Day3;
 
+use AdventOfCode\PuzzleSolution;
 use AdventOfCode\Season2020\GridInput;
-use AdventOfCode\Season2020\PuzzleSolution;
 
 final class PuzzleSolutionFirstPart implements PuzzleSolution
 {

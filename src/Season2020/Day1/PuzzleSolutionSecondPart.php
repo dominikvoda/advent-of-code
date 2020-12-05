@@ -2,8 +2,8 @@
 
 namespace AdventOfCode\Season2020\Day1;
 
-use AdventOfCode\Season2020\LinesInput;
-use AdventOfCode\Season2020\PuzzleSolution;
+use AdventOfCode\LinesInput;
+use AdventOfCode\PuzzleSolution;
 use function array_pop;
 use function count;
 

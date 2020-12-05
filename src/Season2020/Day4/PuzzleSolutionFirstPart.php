@@ -2,7 +2,7 @@
 
 namespace AdventOfCode\Season2020\Day4;
 
-use AdventOfCode\Season2020\PuzzleSolution;
+use AdventOfCode\PuzzleSolution;
 
 final class PuzzleSolutionFirstPart implements PuzzleSolution
 {

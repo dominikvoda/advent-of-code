@@ -2,8 +2,8 @@
 
 namespace AdventOfCode\Season2020\Day2;
 
-use AdventOfCode\Season2020\LinesInput;
-use AdventOfCode\Season2020\PuzzleSolution;
+use AdventOfCode\LinesInput;
+use AdventOfCode\PuzzleSolution;
 use function array_filter;
 
 final class PuzzleSolutionSecondPart implements PuzzleSolution
