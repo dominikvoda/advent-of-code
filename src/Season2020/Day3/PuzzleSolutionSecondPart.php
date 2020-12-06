@@ -2,12 +2,14 @@
 
 namespace AdventOfCode\Season2020\Day3;
 
+use AdventOfCode\IntegerResult;
 use AdventOfCode\PuzzleSolution;
+use AdventOfCode\Result;
 use AdventOfCode\Season2020\GridInput;
 
 final class PuzzleSolutionSecondPart implements PuzzleSolution
 {
-    public function getResult(): string
+    public function getResult(): Result
     {
         $gridInput = new GridInput(__DIR__ . '/input.txt');
 
@@ -25,6 +27,6 @@ final class PuzzleSolutionSecondPart implements PuzzleSolution
             $sum *= TreeCounter::count($gridInput, $strategy['x'], $strategy['y']);
         }
 
-        return (string)$sum;
+        return new IntegerResult($sum);
     }
 }

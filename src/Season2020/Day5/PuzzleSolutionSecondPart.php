@@ -2,15 +2,17 @@
 
 namespace AdventOfCode\Season2020\Day5;
 
+use AdventOfCode\IntegerResult;
 use AdventOfCode\LinesInput;
 use AdventOfCode\PuzzleSolution;
+use AdventOfCode\Result;
 use LogicException;
 use function array_map;
 use function sort;
 
 final class PuzzleSolutionSecondPart implements PuzzleSolution
 {
-    public function getResult(): string
+    public function getResult(): Result
     {
         /** @var Seat[] $seats */
         $seats = LinesInput::createAsObjects(__DIR__ . '/input.txt', Seat::class);
@@ -26,7 +28,7 @@ final class PuzzleSolutionSecondPart implements PuzzleSolution
 
         foreach ($seatIds as $index => $seatId) {
             if($seatIds[$index + 1] !== $seatId + 1){
-                return (string)++$seatId;
+                return new IntegerResult(++$seatId);
             }
         }
 

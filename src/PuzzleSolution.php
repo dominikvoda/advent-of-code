@@ -4,5 +4,5 @@ namespace AdventOfCode;
 
 interface PuzzleSolution
 {
-    public function getResult(): string;
+    public function getResult(): Result;
 }

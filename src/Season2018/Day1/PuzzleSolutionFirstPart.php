@@ -2,16 +2,17 @@
 
 namespace AdventOfCode\Season2018\Day1;
 
+use AdventOfCode\IntegerResult;
 use AdventOfCode\LinesInput;
 use AdventOfCode\PuzzleSolution;
-use function array_sum;
+use AdventOfCode\Result;
 
 class PuzzleSolutionFirstPart implements PuzzleSolution
 {
-    public function getResult(): string
+    public function getResult(): Result
     {
         $input = new LinesInput(__DIR__ . '/input.txt');
 
-        return (string)array_sum($input->getLines());
+        return IntegerResult::fromArraySum($input->getLines());
     }
 }

@@ -2,15 +2,17 @@
 
 namespace AdventOfCode\Season2018\Day2;
 
+use AdventOfCode\IntegerResult;
 use AdventOfCode\LinesInput;
 use AdventOfCode\PuzzleSolution;
+use AdventOfCode\Result;
 use function array_unique;
 use function str_split;
 use function substr_count;
 
 class PuzzleSolutionFirstPart implements PuzzleSolution
 {
-    public function getResult(): string
+    public function getResult(): Result
     {
         $input = new LinesInput(__DIR__ . '/input.txt');
         $doubles = 0;
@@ -44,6 +46,6 @@ class PuzzleSolutionFirstPart implements PuzzleSolution
             }
         }
 
-        return (string)($doubles * $triples);
+        return new IntegerResult($doubles * $triples);
     }
 }

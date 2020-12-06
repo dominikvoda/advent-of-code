@@ -2,15 +2,17 @@
 
 namespace AdventOfCode\Season2018\Day3;
 
+use AdventOfCode\ArrayCountResult;
 use AdventOfCode\LinesInput;
 use AdventOfCode\PuzzleSolution;
+use AdventOfCode\Result;
 use function array_count_values;
 use function array_filter;
 use function array_map;
 
 final class PuzzleSolutionFirstPart implements PuzzleSolution
 {
-    public function getResult(): string
+    public function getResult(): Result
     {
         /** @var Rectangle[] $rectangles */
         $rectangles = LinesInput::createAsObjects(__DIR__ . '/input.txt', Rectangle::class);
@@ -32,6 +34,7 @@ final class PuzzleSolutionFirstPart implements PuzzleSolution
             }
         );
 
-        return (string)count($moreThanOnce);
+
+        return new ArrayCountResult($moreThanOnce);
     }
 }

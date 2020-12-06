@@ -2,8 +2,11 @@
 
 namespace AdventOfCode\Season2020\Day1;
 
+use AdventOfCode\IntegerResult;
 use AdventOfCode\LinesInput;
 use AdventOfCode\PuzzleSolution;
+use AdventOfCode\Result;
+use LogicException;
 use function array_pop;
 use function count;
 
@@ -24,7 +27,7 @@ final class PuzzleSolutionSecondPart implements PuzzleSolution
     }
 
 
-    public function getResult(): string
+    public function getResult(): Result
     {
         while (count($this->numbers) > 0) {
             $firstOperand = array_pop($this->numbers);
@@ -32,10 +35,10 @@ final class PuzzleSolutionSecondPart implements PuzzleSolution
             $missingNumbers = NumbersFinder::findNumbersAndMultiply($this->numbers, self::RESULT - $firstOperand);
 
             if ($missingNumbers !== null) {
-                return (string)($missingNumbers * $firstOperand);
+                return new IntegerResult($missingNumbers * $firstOperand);
             }
         }
 
-        return 'Not found';
+        throw new LogicException('Oh no!');
     }
 }

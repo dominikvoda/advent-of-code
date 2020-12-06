@@ -2,16 +2,16 @@
 
 namespace AdventOfCode\Season2020\Day6;
 
+use AdventOfCode\IntegerResult;
 use AdventOfCode\LinesInput;
 use AdventOfCode\PuzzleSolution;
-use LogicException;
+use AdventOfCode\Result;
 use function array_map;
-use function array_sum;
 use const PHP_EOL;
 
 final class PuzzleSolutionSecondPart implements PuzzleSolution
 {
-    public function getResult(): string
+    public function getResult(): Result
     {
         /** @var Group[] $groups */
         $groups = LinesInput::createAsObjects(__DIR__ . '/input.txt', Group::class, PHP_EOL . PHP_EOL);
@@ -23,6 +23,6 @@ final class PuzzleSolutionSecondPart implements PuzzleSolution
             $groups
         );
 
-        return (string)array_sum($yesAnswers);
+        return IntegerResult::fromSum($yesAnswers);
     }
 }

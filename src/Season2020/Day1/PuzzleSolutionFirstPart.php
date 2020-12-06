@@ -2,8 +2,11 @@
 
 namespace AdventOfCode\Season2020\Day1;
 
+use AdventOfCode\IntegerResult;
 use AdventOfCode\LinesInput;
 use AdventOfCode\PuzzleSolution;
+use AdventOfCode\Result;
+use LogicException;
 
 final class PuzzleSolutionFirstPart implements PuzzleSolution
 {
@@ -22,14 +25,14 @@ final class PuzzleSolutionFirstPart implements PuzzleSolution
     }
 
 
-    public function getResult(): string
+    public function getResult(): Result
     {
         $result = NumbersFinder::findNumbersAndMultiply($this->numbers, self::RESULT);
 
         if ($result !== null) {
-            return (string)$result;
+            return new IntegerResult($result);
         }
 
-        return 'Not found';
+        throw new LogicException('Oh no!');
     }
 }

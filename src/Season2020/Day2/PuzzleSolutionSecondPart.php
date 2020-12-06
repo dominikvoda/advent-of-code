@@ -2,13 +2,15 @@
 
 namespace AdventOfCode\Season2020\Day2;
 
+use AdventOfCode\ArrayCountResult;
 use AdventOfCode\LinesInput;
 use AdventOfCode\PuzzleSolution;
+use AdventOfCode\Result;
 use function array_filter;
 
 final class PuzzleSolutionSecondPart implements PuzzleSolution
 {
-    public function getResult(): string
+    public function getResult(): Result
     {
         $input = new LinesInput(__DIR__ . '/input.txt');
 
@@ -37,6 +39,6 @@ final class PuzzleSolutionSecondPart implements PuzzleSolution
             }
         );
 
-        return (string)count($validPasswords);
+        return new ArrayCountResult($validPasswords);
     }
 }

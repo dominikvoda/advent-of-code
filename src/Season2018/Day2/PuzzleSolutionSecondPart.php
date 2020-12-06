@@ -4,6 +4,8 @@ namespace AdventOfCode\Season2018\Day2;
 
 use AdventOfCode\LinesInput;
 use AdventOfCode\PuzzleSolution;
+use AdventOfCode\Result;
+use AdventOfCode\StringResult;
 use LogicException;
 use function array_diff_assoc;
 use function array_keys;
@@ -12,7 +14,7 @@ use function implode;
 
 class PuzzleSolutionSecondPart implements PuzzleSolution
 {
-    public function getResult(): string
+    public function getResult(): Result
     {
         $input = new LinesInput(__DIR__ . '/input.txt');
         $inputLines = $input->mapLines('str_split');
@@ -28,7 +30,7 @@ class PuzzleSolutionSecondPart implements PuzzleSolution
 
                     unset($inputLineToCompare[$keys[0]]);
 
-                    return implode('', $inputLineToCompare);
+                    return new StringResult(implode('', $inputLineToCompare));
                 }
             }
         }

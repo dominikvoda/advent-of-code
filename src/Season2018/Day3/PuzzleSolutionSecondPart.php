@@ -2,20 +2,18 @@
 
 namespace AdventOfCode\Season2018\Day3;
 
+use AdventOfCode\IntegerResult;
 use AdventOfCode\LinesInput;
 use AdventOfCode\PuzzleSolution;
+use AdventOfCode\Result;
 use LogicException;
 use function array_count_values;
-use function array_filter;
 use function array_map;
 use function array_merge;
-use function array_values;
-use function count;
-use function implode;
 
 final class PuzzleSolutionSecondPart implements PuzzleSolution
 {
-    public function getResult(): string
+    public function getResult(): Result
     {
         /** @var Rectangle[] $rectangles */
         $rectangles = LinesInput::createAsObjects(__DIR__ . '/input.txt', Rectangle::class);
@@ -37,7 +35,7 @@ final class PuzzleSolutionSecondPart implements PuzzleSolution
                 }
             }
 
-            return (string)$rectangle->getId();
+            return new IntegerResult($rectangle->getId());
         }
 
         throw new LogicException('Oh no!');

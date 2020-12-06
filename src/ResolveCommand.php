@@ -55,7 +55,7 @@ class ResolveCommand extends Command
         $puzzleSolution = new $puzzleSolutionClassName();
         assert($puzzleSolution instanceof PuzzleSolution);
 
-        $io->success('Result: ' . $puzzleSolution->getResult());
+        $io->success('Result: ' . $puzzleSolution->getResult()->toString());
 
         return 0;
     }

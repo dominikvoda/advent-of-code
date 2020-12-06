@@ -2,13 +2,15 @@
 
 namespace AdventOfCode\Season2018\Day1;
 
+use AdventOfCode\IntegerResult;
 use AdventOfCode\LinesInput;
 use AdventOfCode\PuzzleSolution;
+use AdventOfCode\Result;
 use function in_array;
 
 class PuzzleSolutionSecondPart implements PuzzleSolution
 {
-    public function getResult(): string
+    public function getResult(): Result
     {
         $input = new LinesInput(__DIR__ . '/input.txt');
 
@@ -19,7 +21,7 @@ class PuzzleSolutionSecondPart implements PuzzleSolution
             foreach ($input->getLines() as $change) {
                 $frequency += (int)$change;
                 if (in_array($frequency, $changeList, true)) {
-                    return (string)$frequency;
+                    return new IntegerResult($frequency);
                 }
 
                 $changeList[] = $frequency;
