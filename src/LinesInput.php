@@ -31,9 +31,9 @@ final class LinesInput
     }
 
 
-    public static function createAsObjects(string $inputFile, string $objectClass): array
+    public static function createAsObjects(string $inputFile, string $objectClass, string $delimiter = PHP_EOL): array
     {
-        $input = new self($inputFile);
+        $input = new self($inputFile, $delimiter);
 
         return $input->mapLines(
             function (string $passportCredentials) use ($objectClass) {
