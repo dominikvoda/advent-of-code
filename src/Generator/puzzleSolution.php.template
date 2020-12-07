@@ -3,11 +3,12 @@
 namespace AdventOfCode\Season{{season}}\Day{{dayNumber}};
 
 use AdventOfCode\PuzzleSolution;
+use AdventOfCode\Result;
 use LogicException;
 
 final class PuzzleSolution{{part}}Part implements PuzzleSolution
 {
-    public function getResult(): string
+    public function getResult(): Result
     {
 		throw new LogicException('Not implemented');
     }

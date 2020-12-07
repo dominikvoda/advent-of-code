@@ -3,6 +3,7 @@
 namespace AdventOfCode;
 
 use function array_sum;
+use function max;
 
 final class IntegerResult implements Result
 {
@@ -27,6 +28,18 @@ final class IntegerResult implements Result
     public static function fromArraySum(array $arrayToSum): self
     {
         return new self(array_sum($arrayToSum));
+    }
+
+
+    public static function fromArrayMax(array $array): self
+    {
+        return new self(max($array));
+    }
+
+
+    public static function fromArrayMin(array $array): self
+    {
+        return new self(min($array));
     }
 
 
