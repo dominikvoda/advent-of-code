@@ -2,7 +2,6 @@
 
 namespace AdventOfCode\Season2020\Day8;
 
-use InvalidArgumentException;
 use function count;
 use function explode;
 use function in_array;
@@ -20,7 +19,7 @@ final class Game
             $line = $lines[$pointer];
 
             if (in_array($pointer, $executedInstructions, true)) {
-                throw new InvalidArgumentException('Infinite loop instructions');
+                throw InfiniteLoopException::create();
             }
 
             $executedInstructions[] = $pointer;

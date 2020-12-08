@@ -6,7 +6,6 @@ use AdventOfCode\IntegerResult;
 use AdventOfCode\LinesInput;
 use AdventOfCode\PuzzleSolution;
 use AdventOfCode\Result;
-use InvalidArgumentException;
 use LogicException;
 use Nette\Utils\Strings;
 use function str_replace;
@@ -26,7 +25,7 @@ final class PuzzleSolutionSecondPart implements PuzzleSolution
                 Game::run($accumulator, $inputLine);
 
                 return new IntegerResult($accumulator->getValue());
-            } catch (InvalidArgumentException $exception) {
+            } catch (InfiniteLoopException $exception) {
                 continue;
             }
         }

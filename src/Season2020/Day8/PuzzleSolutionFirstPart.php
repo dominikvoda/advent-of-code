@@ -6,7 +6,6 @@ use AdventOfCode\IntegerResult;
 use AdventOfCode\LinesInput;
 use AdventOfCode\PuzzleSolution;
 use AdventOfCode\Result;
-use InvalidArgumentException;
 use LogicException;
 
 final class PuzzleSolutionFirstPart implements PuzzleSolution
@@ -19,7 +18,7 @@ final class PuzzleSolutionFirstPart implements PuzzleSolution
 
         try {
             Game::run($accumulator, $input->getLines());
-        } catch (InvalidArgumentException $exception) {
+        } catch (InfiniteLoopException $exception) {
             return new IntegerResult($accumulator->getValue());
         }
 

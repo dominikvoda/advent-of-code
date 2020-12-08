@@ -4,6 +4,12 @@ namespace AdventOfCode\Season2020\Day8;
 
 final class Accumulator
 {
+    /**
+     * @var int
+     */
+    private $value;
+
+
     public function __construct()
     {
         $this->value = 0;
