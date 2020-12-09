@@ -63,11 +63,7 @@ final class LinesInput
      */
     public function getLinesAsNumbers(): array
     {
-        return $this->mapLines(
-            function (string $line): int {
-                return (int)$line;
-            }
-        );
+        return array_map('intval', $this->lines);
     }
 
 
