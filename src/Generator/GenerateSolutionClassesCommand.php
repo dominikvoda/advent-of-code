@@ -11,7 +11,7 @@ final class GenerateSolutionClassesCommand extends Command
 {
     private const DAY = 'day';
     private const SEASON = 'season';
-    private const DEFAULT_SEASON = 2020;
+    private const DEFAULT_SEASON = 2021;
 
 
     public function configure(): void

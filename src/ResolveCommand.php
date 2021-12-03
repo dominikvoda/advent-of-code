@@ -18,7 +18,7 @@ class ResolveCommand extends Command
     private const SEASON = 'season';
     private const FIRST_PART = 'first';
     private const SECOND_PART = 'second';
-    private const DEFAULT_SEASON = 2020;
+    private const DEFAULT_SEASON = 2021;
 
 
     public function configure(): void
